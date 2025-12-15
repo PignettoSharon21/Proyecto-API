@@ -1,0 +1,48 @@
+/* Override Bootstrap button colors to unify all buttons */
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-danger,
+.btn-warning,
+.btn-info {
+    background-color: var(--btn-color) !important;
+    border-color: var(--btn-color) !important;
+    color: white !important;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-success:hover,
+.btn-danger:hover,
+.btn-warning:hover,
+.btn-info:hover {
+    background-color: var(--btn-hover-color) !important;
+    border-color: var(--btn-hover-color) !important;
+    color: white !important;
+}
+
+.btn-outline-secondary {
+    color: var(--btn-color) !important;
+    border-color: var(--btn-color) !important;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--btn-color) !important;
+    border-color: var(--btn-color) !important;
+    color: white !important;
+}
+
+/* Sidebar toggle and logout button */
+#sidebarToggle,
+.btn-outline-light {
+    background-color: var(--btn-color) !important;
+    border-color: var(--btn-color) !important;
+    color: white !important;
+}
+
+#sidebarToggle:hover,
+.btn-outline-light:hover {
+    background-color: var(--btn-hover-color) !important;
+    border-color: var(--btn-hover-color) !important;
+    color: white !important;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos.css">
+  <title>Acceso - Pañol</title>
+</head>
+<body class="login-body">
+  <div class="login-card">
+    <div class="logo-container" style="justify-content:center;">
+      <img src="imagenespract/logo.jpeg" alt="Logo" class="logo">
+    </div>
+    <h2>Iniciar sesión</h2>
+    <form id="formLogin">
+      <input type="text" id="loginUsuario" placeholder="Usuario" autocomplete="username" required>
+      <input type="password" id="loginPassword" placeholder="Contraseña" autocomplete="current-password" required>
+      <button type="submit">Ingresar</button>
+    </form>
+    <p class="nota">Admin: admin / admin123<br>Registrador: registrador / registrador123</p>
+    <p id="loginError" class="login-error"></p>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
+

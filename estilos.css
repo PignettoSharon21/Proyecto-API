@@ -1,0 +1,741 @@
+  :root {
+    --pickled-bluewood: #2a3b4f;
+    --polar: #f4fbfd;
+    --trout: #4e5963;
+    --raven: #79828d;
+    --hit-gray: #a8b1b9;
+    --botticelli: #d9e3eb;
+    --ebony-clay: #26303b;
+    --ghost: #c3c9d2;
+    /* Unified button colors */
+    --btn-color: #6c757d;
+    --btn-hover-color: #5a6268;
+  }
+
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: var(--polar);
+    color: #222;
+  }
+
+  header {
+    background: var(--botticelli);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #sidebarToggle {
+    background: transparent;
+    border: 1px solid var(--trout);
+    color: var(--trout);
+    font-size: 18px;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  #sidebarToggle:hover {
+    background: var(--trout);
+    color: white;
+  }
+
+  header h2 {
+    margin: 0;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .user-info__text {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-size: 14px;
+    color: #222;
+  }
+
+  .user-info__text small {
+    font-size: 11px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .app {
+    display: flex;
+    height: calc(100vh - 60px);
+  }
+
+  nav {
+    width: 220px;
+    background: var(--ghost);
+    padding: 20px;
+    transition: width 0.3s ease, padding 0.3s ease;
+    overflow-x: hidden;
+  }
+
+  nav.collapsed {
+    width: 0;
+    padding: 20px 0;
+  }
+
+  nav a {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: var(--ebony-clay);
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  nav a.active {
+    background: #eaf3ff;
+  }
+
+  main {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease;
+  }
+
+  /* ---- Carta de resumen ---- */
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--hit-gray);
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .card h3 {
+    margin-top: 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  /* ---- tablas (Reemplazado por Bootstrap) ---- */
+  /*
+  th,
+  td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+  */
+
+  .alert {
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+  }
+
+  /* Alertas importante */
+  .alerta-pendiente {
+    background-color: #cc1c1c73;
+    border: 1px solid #f67171ff;
+    color: #800000;
+  }
+
+  /* Alertas positivas */
+  .alerta-ok {
+    background-color: #3494599c;
+    border: 1px solid #94ff99ff;
+    color: #024402;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* ---- Formularios ---- */
+  form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--hit-gray);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Inputs and selects now styled by Bootstrap
+  form input,
+  form select {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  */
+
+  /* Buttons styled by Bootstrap
+  form button {
+    background: var(--trout);
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s
+  }
+
+  form button:hover {
+    background: var(--raven);
+  }
+  */
+
+  /* ---- Cartas de herramientas principal ---- */
+  .tools-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 16px;
+  }
+
+  .tool-card {
+    background: #fff;
+    border: 1px solid #c9c9ff;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .tool-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+
+  /* ---- lo que permite ver luego de Ver más ---- */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    width: 600px;
+    max-width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  .modal-content h3 {
+    margin-top: 0;
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: normal;
+    color: #999;
+    line-height: 1;
+    transition: color 0.2s ease;
+  }
+
+  .close:hover {
+    color: #333;
+  }
+
+  /* ===== INVENTORY MODALS STYLING ===== */
+
+  /* Modal de Detalles - Vista de herramienta */
+  #modalDetalles .modal-content {
+    padding: 30px;
+    max-width: 500px;
+  }
+
+  #modalDetalles h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--botticelli);
+    color: var(--ebony-clay);
+    font-size: 22px;
+  }
+
+  #modalDetalles img {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  #modalDetalles p {
+    margin: 12px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 3px solid var(--btn-color);
+  }
+
+  #modalDetalles p strong {
+    display: inline-block;
+    min-width: 100px;
+    color: var(--trout);
+    font-weight: 600;
+  }
+
+  /* Modal de Editar - Formulario de edición */
+  #modalEditar .modal-content {
+    padding: 30px;
+    max-width: 600px;
+  }
+
+  #modalEditar h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--botticelli);
+    color: var(--ebony-clay);
+    font-size: 22px;
+  }
+
+  #modalEditar .form-group {
+    margin-bottom: 20px;
+  }
+
+  #modalEditar .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--trout);
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  #modalEditar .form-control,
+  #modalEditar .form-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  #modalEditar .form-control:focus,
+  #modalEditar .form-select:focus {
+    border-color: var(--btn-color);
+    box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.1);
+    outline: none;
+  }
+
+  #modalEditar button[type="submit"] {
+    margin-top: 10px;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  /* ---- Buscador principal ---- */
+  .search-bar {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+  }
+
+  /* ---- distancia entre el buscador y las cartas de herramientas ---- */
+  .search-bar input {
+    flex-grow: 1;
+    width: auto;
+    padding: 10px;
+    border: 1px solid #8d8c8c;
+    border-radius: 6px;
+    color: black;
+  }
+
+  /* ---- categoria del principal ---- */
+  #filtroCategoria {
+    width: auto;
+    min-width: 150px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #8d8c8c;
+    border-radius: 6px;
+  }
+
+  .file-upload input[type="file"] {
+    display: none;
+    /* Oculta el input feo */
+  }
+
+  /* Ajuste para el boton de subir  */
+  .file-upload {
+    grid-column: span 2;
+    /* ocupa toda la fila */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #nombreArchivo {
+    font-style: Arial;
+    color: #000000;
+  }
+
+  /* --- FORMULARIO DE PRÉSTAMOS --- */
+  #prestamos form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--hit-gray);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Inputs/selects styled by Bootstrap
+  #prestamos form input,
+  #prestamos form select {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  */
+
+  #prestamos form button {
+    border-radius: 6px;
+  }
+
+  /* Focus states styled by Bootstrap
+  #prestamos form input:focus,
+  #prestamos form select:focus {
+    border-color: var(--trout);
+    box-shadow: 0 0 4px rgba(45, 109, 177, 0.3);
+    outline: none;
+  }
+  */
+
+  #prestamos h3 {
+    margin-bottom: 18px;
+    color: #000000;
+  }
+
+  .lista-herramientas-prestamo {
+    grid-column: 1 / -1;
+    border: 1px dashed var(--hit-gray);
+    border-radius: 10px;
+    padding: 16px;
+    min-height: 88px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .lista-herramientas-prestamo__empty {
+    margin: 0;
+    color: #6b6b6b;
+    font-size: 14px;
+  }
+
+  .lista-herramientas-prestamo table {
+    width: 100%;
+  }
+
+  .lista-herramientas-prestamo .btn-quitar-herramienta {
+    background: transparent;
+    color: #b80000;
+    border: 1px solid #b80000;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .lista-herramientas-prestamo .btn-quitar-herramienta:hover {
+    background: #b80000;
+    color: #fff;
+  }
+
+  .login-body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--polar);
+  }
+
+  .login-card {
+    width: min(360px, 92%);
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .login-card input {
+    padding: 12px 14px;
+    border-radius: 6px;
+    border: 1px solid #cfd8dc;
+    font-size: 15px;
+  }
+
+  .login-error {
+    color: #b80000;
+    font-weight: 600;
+    text-align: center;
+    min-height: 18px;
+  }
+
+  .modal-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: 12px;
+  }
+
+  .modal-actions--split {
+    justify-content: space-between;
+  }
+
+  .modal-actions button {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  /* ===========================
+   🌟 ESTILO GENERAL DE TABLAS (Reemplazado por Bootstrap)
+   =========================== */
+  /*
+  .tabla-estilo {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .tabla-estilo th,
+  .tabla-estilo td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 14px;
+  }
+
+  .tabla-estilo th {
+    background-color: var(--botticelli);
+    color: #000;
+    font-weight: bold;
+  }
+
+  .tabla-estilo tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .tabla-estilo tr:hover {
+    background-color: #e2e9ee;
+    transition: background 0.2s ease-in-out;
+  }
+
+  .tabla-estilo th:nth-child(4),
+  .tabla-estilo td:nth-child(4) {
+    width: 80px;
+  }
+
+  .tabla-estilo tr.No\ Devuelto {
+    background-color: #ffdddd;
+  }
+  */
+
+  #formAgregar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--hit-gray);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Inputs/selects styled by Bootstrap
+  #formAgregar input,
+  #formAgregar select {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 16px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+
+  #formAgregar input:focus,
+  #formAgregar select:focus {
+    border-color: var(--trout);
+    box-shadow: 0 0 4px rgba(45, 109, 177, 0.3);
+    outline: none;
+  }
+  */
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    object-fit: contain;
+  }
+
+  /* del reporte */
+  .report-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .btn-sugerencias {
+    position: absolute;
+    right: 5px;
+    top: 4px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .sugerencias {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 96%;
+    max-height: 100px;
+    overflow-y: auto;
+    display: none;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+
+  .sugerencias div {
+    padding: 6px;
+    cursor: pointer;
+  }
+
+  .sugerencias div:hover {
+    background: #eee;
+  }
+
+  #filtroInventarioCategoria {
+    width: auto;
+    min-width: 150px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #8d8c8c;
+    border-radius: 6px;
+  }
+
+  /* Para las filas con préstamos Vencidos (Alerta ACTIVA) */
+  .alerta-vencido {
+    background-color: #fce3e3 !important;
+    /* Fondo rojo muy claro */
+    color: #bc0303;
+    /* Texto rojo */
+    font-weight: bold;
+    border-left: 5px solid #bc0303;
+  }
+
+  /* Para las filas de préstamos CERRADOS por deuda (Histórico de Deuda) */
+  /* Estados: 'Transferido a No Devuelto' o 'Perdido Cerrado' */
+  .alerta-nodevuelto-cerrado {
+    background-color: #f8b5b5 !important;
+    /* Fondo ligeramente diferente (más fuerte) */
+    color: #8b0000;
+    /* Texto rojo oscuro */
+    font-style: italic;
+    opacity: 0.85;
+    /* Para mostrar que es un registro cerrado */
+    border-left: 5px solid #bc0303;
+  }
+
+
+  /* Para las filas con estado Roto o Desaparecido */
+  .alerta-inventario-afectado {
+    background-color: #fff0e0 !important;
+    /* Fondo anaranjado muy claro */
+    color: #cc6600;
+    /* Texto naranja oscuro/rojo */
+    font-weight: 500;
+    border-left: 5px solid #ff9900;
+    /* Borde izquierdo naranja */
+    opacity: 0.9;
+  }
+
+  /* Responsive Fix for Category Button */
+  @media (max-width: 768px) {
+    .search-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .search-bar input {
+      width: 100%;
+    }
+
+    #filtroCategoria,
+    #filtroInventarioCategoria {
+      width: 100%;
+    }
+  }
